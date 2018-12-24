@@ -150,14 +150,21 @@ namespace VideoArchiveForm
         {
             films.Items.Clear();
             films.Text = null;
-            StreamReader romanticsr = new StreamReader(Application.StartupPath + categoriespath);
-            line = romanticsr.ReadLine();
-            while (line != null)
+            try
             {
-                films.Items.Add(line);
-                line = romanticsr.ReadLine();
+                StreamReader readfilesr = new StreamReader(Application.StartupPath + categoriespath);
+                line = readfilesr.ReadLine();
+                while (line != null)
+                {
+                    films.Items.Add(line);
+                    line = readfilesr.ReadLine();
+                }
+                readfilesr.Close();
             }
-            romanticsr.Close();
+            catch
+            {
+                MessageBox.Show("Please choose category");
+            }
         }
 
         public void openfile(string path)
