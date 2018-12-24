@@ -190,7 +190,7 @@ namespace VideoArchiveForm
             }
             else
             {
-                MessageBox.Show("Boş değer giremezsiniz !!!");
+                MessageBox.Show("Cannot enter null value !!!");
             }
             filenamesw.Close();
         }
