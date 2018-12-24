@@ -113,37 +113,40 @@ namespace VideoArchiveForm
                 FileInfo mp4url = new FileInfo(addfilm.FileName);
                 url = mp4url.FullName;
             }
-            switch (categoriesselectedindex)
+            if (url != null)
             {
-                case 0:
-                    path = @"\Action\actionfilms.txt";
-                    fileurlsw(path, url);
-                    path = @"\Action\actionfilmnames.txt";
-                    filenamesw(path);
-                    
-                    break;
-                case 1:
-                    path = @"\Comedy\comedyfilms.txt";
-                    fileurlsw(path, url);
-                    path = @"\Comedy\comedyfilmnames.txt";
-                    filenamesw(path);
-                    break;
-                case 2:
-                    path = @"\Horror\horrorfilms.txt";
-                    fileurlsw(path, url);
-                    path = @"\Horror\horrorfilmnames.txt";
-                    filenamesw(path);
-                    break;
-                case 3:
-                    path = @"\Romantic\romanticfilms.txt";
-                    fileurlsw(path, url);
-                    path = @"\Romantic\romanticfilmnames.txt";
-                    filenamesw(path);
-                    break;
-                default:
-                    break;
+                switch (categoriesselectedindex)
+                {
+                    case 0:
+                        path = @"\Action\actionfilms.txt";
+                        fileurlsw(path, url);
+                        path = @"\Action\actionfilmnames.txt";
+                        filenamesw(path);
+
+                        break;
+                    case 1:
+                        path = @"\Comedy\comedyfilms.txt";
+                        fileurlsw(path, url);
+                        path = @"\Comedy\comedyfilmnames.txt";
+                        filenamesw(path);
+                        break;
+                    case 2:
+                        path = @"\Horror\horrorfilms.txt";
+                        fileurlsw(path, url);
+                        path = @"\Horror\horrorfilmnames.txt";
+                        filenamesw(path);
+                        break;
+                    case 3:
+                        path = @"\Romantic\romanticfilms.txt";
+                        fileurlsw(path, url);
+                        path = @"\Romantic\romanticfilmnames.txt";
+                        filenamesw(path);
+                        break;
+                    default:
+                        break;
+                }
+                readfile(categoriespath);
             }
-            readfile(categoriespath);
         }
 
         public void readfile(string categoriespath)
