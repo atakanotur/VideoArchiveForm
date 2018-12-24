@@ -22,9 +22,7 @@ namespace VideoArchiveForm
         OpenFileDialog category = new OpenFileDialog();
         OpenFileDialog addfilm = new OpenFileDialog();
         int categoriesselectedindex,filmsselectedindex;
-        string filmstext,url;
-        string line = null;
-        string categoriespath;
+        string filmstext,url,line,categoriespath = string.Empty;
 
         private void categories_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -166,7 +164,7 @@ namespace VideoArchiveForm
             }
             catch
             {
-                MessageBox.Show("Please choose category");
+                MessageBox.Show("Please choose category !!!");
             }
         }
 
